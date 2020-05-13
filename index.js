@@ -61,8 +61,14 @@ For example,
 mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 */
 
-
-
+function mortgageCalculator(principal, interest, years){
+    const monthlyInterestRate = interest/12;
+    const periods = years*12;
+    const numerator = monthlyInterestRate*Math.pow((1+monthlyInterestRate), periods);
+    const denominator = Math.pow((1+monthlyInterestRate), periods) - 1;
+    let monthlyRate = principal * (numerator/denominator);
+    return monthlyRate.toFixed(2);
+}
 
 // 🏡 Task 5: Conditionals
 /* Add another paramter to your function called credit score. This parameter will be a 
@@ -74,6 +80,25 @@ interest rate increases by 0.5% and if credit score is anywhere between 660 and 
  doesn't change.
 */
 
+function mortgageCalculator(principal, interest, years, creditScore){
+    if(creditScore > 740){
+        interest = interest - .05;
+    }else if (creditScore < 660){
+        interest = interest + .05;
+    }
+    let monthlyInterestRate = interest/12;
+    let periods = years*12;
+    let numerator = monthlyInterestRate*Math.pow((1+monthlyInterestRate), periods);
+    let denominator = Math.pow((1+monthlyInterestRate), periods) - 1;
+    let monthlyRate = principal * (numerator/denominator);
+
+    if(Number.isNaN(monthlyRate)){
+        return 0;
+    }else {
+        return monthlyRate.toFixed(2);
+    }
+    
+}
 
 
 
