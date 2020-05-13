@@ -37,8 +37,9 @@ Hint #2: you'll need to use the `math` object for parts of this calculation!
 When your math is correct, monthlyRate will equal 1073.64
 */
 
-
-
+let numerator = monthlyInterestRate*Math.pow((1+monthlyInterestRate), periods);
+let denominator = Math.pow((1+monthlyInterestRate), periods) - 1;
+let monthlyRate = principal * (numerator/denominator);
 
 // 🏡 Task 3: Function
 /* Create a function called `mortgageCalculator` that combines all of the steps from task 1 and 2 
@@ -47,8 +48,9 @@ and returns a sentence "{Name}, your monthly rate is ${monthlyRate}"
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
 
-
-
+function mortgageCalculator(){
+    return name + ", your monthly rate is " + monthlyRate.toFixed(2);
+}
 
 
 // 🏡 Task 4: Arguments and Parameters
@@ -58,7 +60,6 @@ If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly 
 For example,
 mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 */
-
 
 
 
