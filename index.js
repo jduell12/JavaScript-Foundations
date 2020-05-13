@@ -52,6 +52,7 @@ function mortgageCalculator(){
     return name + ", your monthly rate is " + monthlyRate.toFixed(2);
 }
 
+// console.log(mortgageCalculator());
 
 // 🏡 Task 4: Arguments and Parameters
 /* Substitute the variables in your functions for parameters such that you can substitute
@@ -69,6 +70,8 @@ function mortgageCalculator(principal, interest, years){
     let monthlyRate = principal * (numerator/denominator);
     return monthlyRate.toFixed(2);
 }
+
+// console.log(mortgageCalculator(200000, 0.05, 30));
 
 // 🏡 Task 5: Conditionals
 /* Add another paramter to your function called credit score. This parameter will be a 
@@ -99,6 +102,10 @@ function mortgageCalculator(principal, interest, years, creditScore){
     }
     
 }
+
+// console.log(mortgageCalculator(200000, 0.5, 30, 800));
+// console.log(mortgageCalculator(200000, 0.5, 30, 600));
+// console.log(mortgageCalculator(200000, 0.5, 30, 700));
 
 
 
@@ -142,18 +149,29 @@ function variableInterestRate(principal, interest, years){
     
 }
 
-variableInterestRate(200000, 0.04, 30);
-console.log("{Name}, with an interest rate of 0.02, your monthly rate is $739");
-console.log("{Name}, with an interest rate of 0.025, your monthly rate is $790");
-console.log("{Name}, with an interest rate of 0.03, your monthly rate is $843");
-console.log("{Name}, with an interest rate of 0.035, your monthly rate is $898");
-console.log("{Name}, with an interest rate of 0.04, your monthly rate is $955");
-console.log("{Name}, with an interest rate of 0.045, your monthly rate is $1013");
-console.log("{Name}, with an interest rate of 0.05, your monthly rate is $1074");
-console.log("{Name}, with an interest rate of 0.055, your monthly rate is $1136");
-console.log("{Name}, with an interest rate of 0.06, your monthly rate is $1199");
+// console.log(variableInterestRate(200000, 0.04, 30));
 
 // 🌟🌟🌟 STRETCH 🌟🌟🌟//
+
+/* 🏡  Refactor your `variableInterestRate()` function to accept an array of interest rates 
+(make sure to copy and paste as to not lose your work!) */
+function variableInterestRate(principal, interestArray, years){
+    for(let i = 0; i < interestArray.length; i++){
+        interest = interestArray[i];
+        let monthlyInterestRate = interest/12;
+        let periods = years*12;
+        let numerator = monthlyInterestRate*Math.pow((1+monthlyInterestRate), periods);
+        let denominator = Math.pow((1+monthlyInterestRate), periods) - 1;
+        let monthlyRate = principal * (numerator/denominator);
+        console.log(name + ", with an interest rate of " + interest.toFixed(2) + ", your monthly rate is $" + monthlyRate.toFixed(0));
+    }
+    
+}
+
+// arrayOfInterest = [0.02, 0.025, 0.03, 0.035, 0.04, 0.045, 0.05, 0.055, 0.06];
+// variableInterestRate(200000, arrayOfInterest, 30);
+
+
 
 /* Attempt any of the stretch goals below once you have finished the work above. 
 Remember as always, these may require additional research beyond what you learned today */
@@ -169,5 +187,3 @@ and returns the maximum loan that a person could afford */
 /* 🏡 Explore using `window.prompt()` to allow a user to input parameters in the browser */
 
 
-/* 🏡  Refactor your `variableInterestRate()` function to accept an array of interest rates 
-(make sure to copy and paste as to not lose your work!) */
