@@ -171,10 +171,17 @@ function variableInterestRate(principal, interestArray, years){
 // arrayOfInterest = [0.02, 0.025, 0.03, 0.035, 0.04, 0.045, 0.05, 0.055, 0.06];
 // variableInterestRate(200000, arrayOfInterest, 30);
 
+/* 🏡 Explore using `window.prompt()` to allow a user to input parameters in the browser */
+//uncomment below for window.prompt function
+
+// let princi = window.prompt("Enter principal:");
+// let time = window.prompt("Enter number of years for mortgage:");
+// let int = window.prompt("Enter interest rate as %: ");
+// int = int/100;
+
+// console.log(mortgageCalculator(princi, int, time));
 
 
-/* Attempt any of the stretch goals below once you have finished the work above. 
-Remember as always, these may require additional research beyond what you learned today */
 
 /*  🏡 Add  `Property Tax`, `Homeowner's insurance` and `HOA fees` as 
 parameters in your function to calculate total monthly spending on housing */
@@ -184,6 +191,6 @@ parameters in your function to calculate total monthly spending on housing */
 and returns the maximum loan that a person could afford */
 
 
-/* 🏡 Explore using `window.prompt()` to allow a user to input parameters in the browser */
+
 
 
