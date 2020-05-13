@@ -31,7 +31,7 @@ M = P [ I ( 1 + I )^N ] / [ ( 1 + I )^N – 1 ]
 In order to find your monthly payment amount "M,” you need to plug in the following three numbers from your loan:
 
 `P` = Principal amount (the total amount borrowed)
-`I` = Interest rate on the mortgage
+`I` = Monthly Interest rate on the mortgage
 `N` = Number of periods (monthly mortgage payments)
 
 Exercises outlined in the `index.js` file walk you through a series of steps for building a robust and functional mortgage calculator.
