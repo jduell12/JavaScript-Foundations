@@ -174,12 +174,12 @@ function variableInterestRate(principal, interestArray, years){
 /* 🏡 Explore using `window.prompt()` to allow a user to input parameters in the browser */
 //uncomment below for window.prompt function
 
-// let princi = window.prompt("Enter principal:");
-// let time = window.prompt("Enter number of years for mortgage:");
-// let int = window.prompt("Enter interest rate as %: ");
-// int = int/100;
+let princi = window.prompt("Enter principal:");
+let time = window.prompt("Enter number of years for mortgage:");
+let int = window.prompt("Enter interest rate as %: ");
+int = int/100;
 
-// console.log(mortgageCalculator(princi, int, time));
+console.log(mortgageCalculator(princi, int, time));
 
 
 
